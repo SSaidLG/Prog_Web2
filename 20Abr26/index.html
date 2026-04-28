@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de usuarios desde JSON</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        /* Estilo para indicar que una celda es editable */
+        td[contenteditable="true"]:hover { background-color: #ffffd0; cursor: pointer; }
+        td[contenteditable="true"]:focus { background-color: #ffffd0; outline: none; border: 2px solid #007bff; }
+    </style>
+</head>
+<body>
+    <h2>Gestor de usuarios desde JSON</h2>
+    
+    <form id="formUsuario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required><br><br>
+        <button type="submit">Guardar Nuevo Usuario</button>
+    </form>
+    
+    <br>
+    <hr>
+    
+    <h3>Acciones de Archivo:</h3>
+    <label>Importar JSON: </label>
+    <input type="file" id="importarJSON" accept=".json">
+    <button id="descargarBtn">Descargar JSON</button>
+    
+    <br><br>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre (Click para editar)</th>
+                <th>Correo (Click para editar)</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="tablaUsuarios">
+            </tbody>
+    </table>
+
+    <script src="app.js"></script>
+</body>
+</html>
