@@ -26,6 +26,35 @@ app.get('/api/status', (req, res) => {
 // Todo lo que empiece con /api/vehiculos será manejado por vehiculosRoutes
 app.use('/api/vehiculos', vehiculosRoutes);
 
+// ==========================================
+// RUTA DE MÉTRICAS (KPIs para Dashboards)
+// ==========================================
+app.get('/api/metrics', async (req, res) => {
+    try {
+        // Consultamos tu base de datos (con las tablas en español que creamos)
+        const [totalRows] = await db.query('SELECT COUNT(*) as total FROM vehiculos');
+        const [activeRows] = await db.query('SELECT COUNT(*) as active FROM vehiculos WHERE estado = "OPERATIVO"');
+        const [maintenanceRows] = await db.query('SELECT COUNT(*) as maintenance FROM vehiculos WHERE estado IN ("MANTENIMIENTO", "FALLA CRITICA")');
+        
+        const total = totalRows[0].total;
+        const active = activeRows[0].active;
+        const maintenance = maintenanceRows[0].maintenance;
+        
+        // Calculamos el porcentaje de salud de la flota
+        const fleetHealth = total > 0 ? ((active / total) * 100).toFixed(1) : 0;
+
+        res.json({
+            total_vehicles: total,
+            active_vehicles: active,
+            in_maintenance: maintenance,
+            fleet_health_percentage: fleetHealth
+        });
+    } catch (error) {
+        console.error('Error en métricas:', error);
+        res.status(500).json({ error: 'Error al calcular las métricas' });
+    }
+});
+
 // Levantar el servidor
 app.listen(PORT, () => {
     console.log(`=========================================`);
