@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  # Contenedor 1: La Base de Datos
+  db:
+    image: mysql:8.0
+    platform: linux/amd64 # Fundamental para que no falle en procesadores M1
+    container_name: fleetops_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: fleetops_db
+    ports:
+      - "3306:3306"
+    volumes:
+      # Este volumen inyecta el script SQL para que se ejecute solito la primera vez
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      # Este volumen guarda los datos físicos para que no se borren si apagas el contenedor
+      - mysql_data:/var/lib/mysql
+
+  # Contenedor 2: El Servidor Node/Express
+  api:
+    build: 
+      context: ./backend
+    container_name: fleetops_api
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=db # Apunta al nombre del contenedor de arriba
+      - DB_USER=root
+      - DB_PASSWORD=rootpassword
+      - DB_NAME=fleetops_db
+    depends_on:
+      - db
+
+volumes:
+  mysql_data:
