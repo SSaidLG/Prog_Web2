@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>FleetOps Command - Iniciar Sesión</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Patrón sutil de líneas en el panel lateral (estética industrial) */
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-in {
+            animation: fade-in-up 0.5s ease-out both;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#d6e4f9",
+                        "on-tertiary-container": "#3aa186",
+                        "primary": "#041627",
+                        "surface-container-low": "#eef4ff",
+                        "surface-container-high": "#dce9fe",
+                        "inverse-surface": "#243141",
+                        "on-surface-variant": "#44474c",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#e5eeff",
+                        "on-primary-fixed-variant": "#38485a",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#1a2b3c",
+                        "on-primary-container": "#8192a7",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "surface": "#f8f9ff",
+                        "on-surface": "#0f1c2b",
+                        "secondary-container": "#fd8b00",
+                        "on-secondary-container": "#603100",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#0f1c2b",
+                        "outline-variant": "#c4c6cd",
+                        "background": "#f8f9ff",
+                        "outline": "#74777d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "md": "16px", "unit": "4px", "gutter": "16px", "sm": "8px",
+                        "xl": "40px", "margin-page": "32px", "xs": "4px", "lg": "24px"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background text-on-background min-h-screen flex">
+
+    <!-- PANEL IZQUIERDO: Branding (oculto en móvil) -->
+    <div class="hidden lg:flex lg:w-1/2 bg-primary grid-pattern relative flex-col justify-between p-xl overflow-hidden">
+        <!-- Logo -->
+        <div class="flex items-center gap-sm z-10">
+            <div class="w-10 h-10 bg-secondary-container flex items-center justify-center rounded">
+                <span class="material-symbols-outlined text-on-secondary-container">local_shipping</span>
+            </div>
+            <div>
+                <h1 class="text-lg font-bold text-on-primary uppercase tracking-widest">Global Logistics</h1>
+                <p class="text-[11px] font-bold tracking-widest text-on-primary-container">TERMINAL A-12</p>
+            </div>
+        </div>
+
+        <!-- Texto central -->
+        <div class="z-10 animate-in">
+            <h2 class="text-on-primary text-5xl font-black leading-tight tracking-tight">
+                FleetOps<br />
+                <span class="text-secondary-container">Command</span>
+            </h2>
+            <p class="text-on-primary-container text-base mt-md max-w-sm leading-relaxed">
+                Plataforma centralizada de gestión de flota, inspecciones y mantenimiento en tiempo real.
+            </p>
+        </div>
+
+        <!-- Pie -->
+        <div class="z-10 flex items-center gap-lg text-on-primary-container text-[11px] font-bold tracking-widest uppercase">
+            <span class="flex items-center gap-xs"><span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Sistema Operativo</span>
+            <span>v1.0.0</span>
+        </div>
+
+        <!-- Icono decorativo grande de fondo -->
+        <span class="material-symbols-outlined absolute -right-10 -bottom-10 text-[320px] text-on-primary opacity-5 select-none pointer-events-none">
+            grid_view
+        </span>
+    </div>
+
+    <!-- PANEL DERECHO: Formulario -->
+    <div class="w-full lg:w-1/2 flex items-center justify-center p-md">
+        <div class="w-full max-w-md animate-in">
+
+            <!-- Logo solo en móvil -->
+            <div class="flex lg:hidden items-center gap-sm mb-xl justify-center">
+                <div class="w-10 h-10 bg-primary flex items-center justify-center rounded">
+                    <span class="material-symbols-outlined text-on-primary">local_shipping</span>
+                </div>
+                <h1 class="text-lg font-black text-primary uppercase tracking-widest">FleetOps</h1>
+            </div>
+
+            <div class="mb-xl">
+                <p class="text-[12px] font-bold tracking-widest text-secondary uppercase mb-xs" style="color:#904d00">Bienvenido de nuevo</p>
+                <h2 class="text-3xl font-black text-on-surface">Iniciar Sesión</h2>
+                <p class="text-on-surface-variant text-sm mt-xs">Ingresa tus credenciales para acceder al panel.</p>
+            </div>
+
+            <!-- Caja de error -->
+            <div id="error-box" class="hidden mb-md flex items-center gap-sm p-md rounded-lg bg-error-container text-on-error-container border border-error/20">
+                <span class="material-symbols-outlined text-error">error</span>
+                <p id="error-msg" class="text-sm font-bold">Credenciales incorrectas</p>
+            </div>
+
+            <form id="login-form" class="flex flex-col gap-md">
+                <!-- Email -->
+                <div>
+                    <label class="block text-[12px] font-bold tracking-wide text-on-surface-variant uppercase mb-xs" for="email">
+                        Correo electrónico
+                    </label>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">mail</span>
+                        <input id="email" name="email" type="email" required autocomplete="email"
+                            value="admin@fleetops.com"
+                            class="w-full pl-11 pr-md py-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+                            placeholder="tucorreo@empresa.com" />
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div>
+                    <label class="block text-[12px] font-bold tracking-wide text-on-surface-variant uppercase mb-xs" for="password">
+                        Contraseña
+                    </label>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">lock</span>
+                        <input id="password" name="password" type="password" required autocomplete="current-password"
+                            value="admin123"
+                            class="w-full pl-11 pr-11 py-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
+                            placeholder="••••••••" />
+                        <button type="button" id="toggle-pass"
+                            class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition">
+                            <span class="material-symbols-outlined text-[20px]">visibility</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Botón -->
+                <button type="submit" id="submit-btn"
+                    class="mt-sm w-full py-3 rounded-lg bg-primary text-on-primary font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-sm hover:bg-primary-container transition-colors active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed">
+                    <span id="btn-text">Entrar al sistema</span>
+                    <span id="btn-spinner" class="hidden material-symbols-outlined animate-spin text-[20px]">progress_activity</span>
+                </button>
+            </form>
+
+            <!-- Nota de credenciales de prueba -->
+            <div class="mt-xl p-md rounded-lg bg-surface-container-low border border-outline-variant">
+                <p class="text-[11px] font-bold tracking-widest text-on-surface-variant uppercase mb-xs flex items-center gap-xs">
+                    <span class="material-symbols-outlined text-[16px]">key</span> Credenciales de prueba
+                </p>
+                <p class="text-sm text-on-surface-variant font-mono">admin@fleetops.com / admin123</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/auth.js"></script>
+    <script>
+        // Si el usuario ya tiene sesión activa, lo mandamos directo al dashboard
+        if (estaAutenticado()) {
+            window.location.href = './dashboard.html';
+        }
+
+        // Mostrar / ocultar contraseña
+        const togglePass = document.getElementById('toggle-pass');
+        const passInput = document.getElementById('password');
+        togglePass.addEventListener('click', () => {
+            const esPassword = passInput.type === 'password';
+            passInput.type = esPassword ? 'text' : 'password';
+            togglePass.querySelector('span').textContent = esPassword ? 'visibility_off' : 'visibility';
+        });
+
+        // Manejo del envío del formulario
+        const form = document.getElementById('login-form');
+        const errorBox = document.getElementById('error-box');
+        const errorMsg = document.getElementById('error-msg');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const btnSpinner = document.getElementById('btn-spinner');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            errorBox.classList.add('hidden');
+
+            const email = document.getElementById('email').value.trim();
+            const password = passInput.value;
+
+            // Estado de carga
+            submitBtn.disabled = true;
+            btnText.textContent = 'Verificando...';
+            btnSpinner.classList.remove('hidden');
+
+            try {
+                const resultado = await iniciarSesion(email, password);
+
+                if (resultado.ok) {
+                    // Login correcto -> al dashboard
+                    btnText.textContent = '¡Bienvenido!';
+                    window.location.href = './dashboard.html';
+                } else {
+                    // Mostrar error
+                    errorMsg.textContent = resultado.error || 'Credenciales incorrectas';
+                    errorBox.classList.remove('hidden');
+                    submitBtn.disabled = false;
+                    btnText.textContent = 'Entrar al sistema';
+                    btnSpinner.classList.add('hidden');
+                }
+            } catch (err) {
+                errorMsg.textContent = 'No se pudo conectar con el servidor';
+                errorBox.classList.remove('hidden');
+                submitBtn.disabled = false;
+                btnText.textContent = 'Entrar al sistema';
+                btnSpinner.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>
