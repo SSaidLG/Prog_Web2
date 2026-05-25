@@ -135,33 +135,33 @@
                         </div>
                 </div>
                 <nav class="flex-1 flex flex-col">
-                        <a class="bg-secondary-container text-on-secondary-container font-bold rounded-lg my-1 mx-2 flex items-center gap-md px-md py-sm transition-all active:scale-95"
+                        <a class="text-on-primary-container hover:text-on-primary hover:bg-on-primary-fixed-variant/20 rounded-lg my-1 mx-2 flex items-center gap-md px-md py-sm transition-colors duration-150 active:scale-95"
                                 href="./dashboard.html">
                                 <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-                                <span class="text-label-caps font-label-caps">Dashboard</span>
+                                <span class="text-label-caps font-label-caps uppercase">Dashboard</span>
                         </a>
-                        <a class="text-on-primary-container hover:text-on-primary hover:bg-on-primary-fixed-variant/20 rounded-lg my-1 mx-2 flex items-center gap-md px-md py-sm transition-colors duration-150 active:scale-95"
+                        <a class="bg-secondary-container text-on-secondary-container font-bold rounded-lg my-1 mx-2 flex items-center gap-md px-md py-sm transition-all active:scale-95"
                                 href="./flota.html">
                                 <span class="material-symbols-outlined" data-icon="directions_car">directions_car</span>
-                                <span class="text-label-caps font-label-caps">Flota</span>
+                                <span class="text-label-caps font-label-caps uppercase">Flota</span>
                         </a>
-                        <a class="text-on-primary-container hover:text-on-primary hover:bg-on-primary-fixed-variant/20 rounded-lg my-1 mx-2 flex items-center gap-md px-md py-sm transition-colors duration-150 active:scale-95"
+                        <!-- <a class="text-on-primary-container hover:text-on-primary hover:bg-on-primary-fixed-variant/20 rounded-lg my-1 mx-2 flex items-center gap-md px-md py-sm transition-colors duration-150 active:scale-95"
                                 href="./inspeccion.html">
                                 <span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
-                                <span class="text-label-caps font-label-caps">Inspecciones</span>
+                                <span class="text-label-caps font-label-caps uppercase">Inspecciones</span>
                         </a>
                         <a class="text-on-primary-container hover:text-on-primary hover:bg-on-primary-fixed-variant/20 rounded-lg my-1 mx-2 flex items-center gap-md px-md py-sm transition-colors duration-150 active:scale-95"
                                 href="./mantenimiento.html">
                                 <span class="material-symbols-outlined" data-icon="build">build</span>
-                                <span class="text-label-caps font-label-caps">Mantenimiento</span>
-                        </a>
+                                <span class="text-label-caps font-label-caps uppercase">Mantenimiento</span>
+                        </a> -->
                 </nav>
                 <div class="mt-auto flex flex-col">
-                        <button
+                        <!-- <button
                                 class="bg-secondary mx-md mb-lg py-sm text-on-primary font-bold rounded flex items-center justify-center gap-xs hover:bg-secondary-container transition-colors">
                                 <span class="material-symbols-outlined" data-icon="add">add</span>
                                 <span class="text-label-caps font-label-caps">New Inspection</span>
-                        </button>
+                        </button> -->
                         <a class="text-on-primary-container hover:text-on-primary hover:bg-on-primary-fixed-variant/20 rounded-lg my-1 mx-2 flex items-center gap-md px-md py-sm transition-colors duration-150"
                                 href="#">
                                 <span class="material-symbols-outlined" data-icon="help">help</span>
@@ -181,26 +181,12 @@
                         <div class="flex items-center gap-lg">
                                 <h1 class="text-headline-md font-headline-md text-primary tracking-tight font-black">
                                         FleetOps Command</h1>
-                                <div class="relative">
-                                        <span
-                                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-                                        <input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg text-body-sm focus:outline-none focus:border-secondary-container w-64"
-                                                placeholder="Search vehicles..." type="text" />
-                                </div>
                         </div>
                         <div class="flex items-center gap-md">
-                                <button
-                                        class="p-2 text-primary hover:bg-surface-container transition-all duration-200 rounded-full">
-                                        <span class="material-symbols-outlined">notifications</span>
-                                </button>
-                                <button
-                                        class="p-2 text-primary hover:bg-surface-container transition-all duration-200 rounded-full">
-                                        <span class="material-symbols-outlined">settings</span>
-                                </button>
                                 <div class="h-8 w-[1px] bg-outline-variant mx-sm"></div>
                                 <button
                                         class="bg-secondary-container text-on-secondary-container px-lg py-sm font-bold rounded-lg active:opacity-80 transition-all duration-200">
-                                        Dispatch
+                                        Exportar
                                 </button>
                         </div>
                 </header>
@@ -209,6 +195,8 @@
                         <!-- Header Action Row -->
                         <div class="flex justify-between items-end mb-xl">
                                 <div>
+                                        <p class="text-label-caps font-label-caps text-secondary font-bold mb-xs uppercase">
+                                                Fleet Status</p>
                                         <h2 class="text-display-lg font-display-lg text-primary">Vehicle Inventory</h2>
                                         <p class="text-body-base text-on-surface-variant">Manage and monitor fleet
                                                 status across all regions.</p>

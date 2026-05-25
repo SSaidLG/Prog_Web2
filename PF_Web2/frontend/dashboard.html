@@ -137,30 +137,30 @@
                         <a class="bg-secondary-container text-on-secondary-container font-bold rounded-lg my-1 mx-2 flex items-center gap-md px-md py-sm transition-all active:scale-95"
                                 href="./dashboard.html">
                                 <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-                                <span class="text-label-caps font-label-caps">Dashboard</span>
+                                <span class="text-label-caps font-label-caps uppercase">Dashboard</span>
                         </a>
                         <a class="text-on-primary-container hover:text-on-primary hover:bg-on-primary-fixed-variant/20 rounded-lg my-1 mx-2 flex items-center gap-md px-md py-sm transition-colors duration-150 active:scale-95"
                                 href="./flota.html">
                                 <span class="material-symbols-outlined" data-icon="directions_car">directions_car</span>
-                                <span class="text-label-caps font-label-caps">Flota</span>
+                                <span class="text-label-caps font-label-caps uppercase">Flota</span>
                         </a>
-                        <a class="text-on-primary-container hover:text-on-primary hover:bg-on-primary-fixed-variant/20 rounded-lg my-1 mx-2 flex items-center gap-md px-md py-sm transition-colors duration-150 active:scale-95"
+                        <!-- <a class="text-on-primary-container hover:text-on-primary hover:bg-on-primary-fixed-variant/20 rounded-lg my-1 mx-2 flex items-center gap-md px-md py-sm transition-colors duration-150 active:scale-95"
                                 href="./inspeccion.html">
                                 <span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
-                                <span class="text-label-caps font-label-caps">Inspecciones</span>
+                                <span class="text-label-caps font-label-caps uppercase">Inspecciones</span>
                         </a>
                         <a class="text-on-primary-container hover:text-on-primary hover:bg-on-primary-fixed-variant/20 rounded-lg my-1 mx-2 flex items-center gap-md px-md py-sm transition-colors duration-150 active:scale-95"
                                 href="./mantenimiento.html">
                                 <span class="material-symbols-outlined" data-icon="build">build</span>
-                                <span class="text-label-caps font-label-caps">Mantenimiento</span>
-                        </a>
+                                <span class="text-label-caps font-label-caps uppercase">Mantenimiento</span>
+                        </a> -->
                 </nav>
                 <div class="mt-auto flex flex-col">
-                        <button
+                        <!-- <button
                                 class="bg-secondary mx-md mb-lg py-sm text-on-primary font-bold rounded flex items-center justify-center gap-xs hover:bg-secondary-container transition-colors">
                                 <span class="material-symbols-outlined" data-icon="add">add</span>
                                 <span class="text-label-caps font-label-caps">New Inspection</span>
-                        </button>
+                        </button> -->
                         <a class="text-on-primary-container hover:text-on-primary hover:bg-on-primary-fixed-variant/20 rounded-lg my-1 mx-2 flex items-center gap-md px-md py-sm transition-colors duration-150"
                                 href="#">
                                 <span class="material-symbols-outlined" data-icon="help">help</span>
@@ -177,47 +177,17 @@
         <main class="ml-64 min-h-screen flex flex-col">
                 <!-- TopNavBar -->
                 <header
-                        class="bg-surface-container-lowest dark:bg-primary-container border-b border-outline-variant dark:border-outline flex justify-between items-center w-full px-lg h-16 sticky top-0 z-40">
+                        class="flex justify-between items-center w-full px-lg h-16 z-40 bg-surface-container-lowest border-b border-outline-variant">
                         <div class="flex items-center gap-lg">
-                                <span
-                                        class="text-headline-md font-headline-md text-primary dark:text-primary-fixed-dim tracking-tight font-black">FleetOps
-                                        Command</span>
-                                <div class="relative hidden lg:block">
-                                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
-                                                data-icon="search">search</span>
-                                        <input class="bg-surface-container border-none rounded-full pl-10 pr-lg py-sm text-body-sm w-80 focus:ring-2 focus:ring-secondary"
-                                                placeholder="Search vehicles, routes..." type="text" />
-                                </div>
+                                <h1 class="text-headline-md font-headline-md text-primary tracking-tight font-black">
+                                        FleetOps Command</h1>
                         </div>
                         <div class="flex items-center gap-md">
-                                <nav class="hidden md:flex gap-lg mr-lg">
-                                        <a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-secondary text-body-base font-body-base py-5"
-                                                href="#">Overview</a>
-                                        <a class="text-on-surface-variant dark:text-on-primary-container hover:bg-surface-container dark:hover:bg-primary-fixed-dim/10 text-body-base font-body-base py-5 transition-all"
-                                                href="#">Analytics</a>
-                                        <a class="text-on-surface-variant dark:text-on-primary-container hover:bg-surface-container dark:hover:bg-primary-fixed-dim/10 text-body-base font-body-base py-5 transition-all"
-                                                href="#">Schedules</a>
-                                </nav>
-                                <div class="flex items-center gap-sm">
-                                        <button
-                                                class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-all">
-                                                <span class="material-symbols-outlined"
-                                                        data-icon="notifications">notifications</span>
-                                        </button>
-                                        <button
-                                                class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-all">
-                                                <span class="material-symbols-outlined"
-                                                        data-icon="settings">settings</span>
-                                        </button>
-                                        <div class="h-8 w-px bg-outline-variant mx-2"></div>
-                                        <button
-                                                class="bg-primary text-on-primary px-lg py-sm rounded font-bold hover:opacity-90 transition-all active:opacity-80">
-                                                Dispatch
-                                        </button>
-                                        <img alt="Fleet Manager Profile"
-                                                class="w-10 h-10 rounded-full border border-outline-variant ml-md"
-                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzHdazMXk4YpDxAgwtAHNlrQ6TkX3oZFyaov0t5gzqtCK_KpUCzwuvu_2d-LnXznexJJb35f7PfjUNbq4Gw6g7tlNvUJgLpOz6esfGOxqY7QPiFALdREyhJ9pXSye7uXTO6NnaSN6kVB73Jm3jKaPTWu-FImEuk8pOVh7b0gvxwrdy6ckLrmuAK_A8xdalW6HbJ6KZpvkfHsTT92czFBkJ8Fl19FI2LRBeAvrmY9nlZeaTnL06Wqnt4V2i7wdMacHzy9nl1knoTrjV" />
-                                </div>
+                                <div class="h-8 w-[1px] bg-outline-variant mx-sm"></div>
+                                <button
+                                        class="bg-secondary-container text-on-secondary-container px-lg py-sm font-bold rounded-lg active:opacity-80 transition-all duration-200">
+                                        Exportar
+                                </button>
                         </div>
                 </header>
                 <!-- Dashboard Canvas -->
@@ -225,8 +195,7 @@
                         <!-- Header Summary -->
                         <div class="flex flex-col md:flex-row md:items-end justify-between gap-md">
                                 <div>
-                                        <p
-                                                class="text-label-caps font-label-caps text-secondary font-bold mb-xs uppercase">
+                                        <p class="text-label-caps font-label-caps text-secondary font-bold mb-xs uppercase">
                                                 Operational Status</p>
                                         <h2 class="text-display-lg font-display-lg text-primary">Fleet Overview</h2>
                                 </div>
